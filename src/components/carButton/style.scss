@@ -1,0 +1,31 @@
+.car-btn-box{
+    display: flex;
+    justify-content:space-between;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    button{
+        width: 30px;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size:20px;
+        &:first-child{
+            border-right: 1px solid #ddd;
+        }
+        &:last-child{
+            border-left: 1px solid #ddd;
+        }
+    }
+    span{
+        display: inline-block;
+        width: 40px;
+        height: 100%;
+        text-align: center;
+    }
+
+
+}

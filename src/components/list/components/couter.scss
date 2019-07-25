@@ -1,0 +1,38 @@
+$color: #ddb886;
+.counter-outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    .counter-box{
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 182px;
+        border: 1px solid $color;
+        border-radius: 30px;
+        overflow: hidden;
+        span{
+            display: inline-block;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .count-item{
+            width: 100px;
+            font-size: 20px;
+            border-left: 1px solid $color;
+            border-right: 1px solid $color;
+        }
+        .counter-btn{
+            width: 40px;
+            font-size: 30px;
+            color:$color;
+            cursor: pointer;
+            &:hover,&:active{
+                color: #fff;
+                background: $color;
+            }
+        }
+    }
+}

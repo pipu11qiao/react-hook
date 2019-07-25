@@ -1,0 +1,12 @@
+.active-route-link{
+    color: red;
+    font-weight: bold;
+}
+.route-nav-list{
+    line-height: 30px;
+    border-left: 5px solid #cedddd;
+    li {
+        margin-top: 10px;
+        border-bottom: 2px solid #ddd;
+    }
+}
