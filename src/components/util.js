@@ -1,13 +1,12 @@
 export const splitCamel = (camelStr) => {
     const reg = /[A-Z]?[a-z]+/g;
-    const res = (camelStr + '').match(reg);
+    const res = (`${camelStr}`).match(reg);
     if (res) {
         return res.map(item => item.toLowerCase());
-    } else {
-        return [camelStr];
     }
+    return [camelStr];
 };
-export const getChildRoutePath = (props,childPath) => {
+export const getChildRoutePath = (props, childPath) => {
     const {
         match
     } = props;

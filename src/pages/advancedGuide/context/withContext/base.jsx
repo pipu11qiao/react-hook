@@ -1,18 +1,18 @@
-import React, {Component,createContext} from 'react';
+import React, { Component, createContext } from 'react';
 
 const TextContext = createContext('aaa'); // set defautl value of context
 
 export default class Base extends Component {
-    render (){
+    render() {
         return (
-            <TextContext.Provider value='base text'>
+            <TextContext.Provider value="base text">
                 <Box />
             </TextContext.Provider>
         );
     }
-};
+}
 
-function Box (props){
+function Box() {
     return (
         <div>
             <TextButtonBox />
@@ -21,14 +21,15 @@ function Box (props){
 }
 class TextButtonBox extends Component {
     static contextType= TextContext;
-    render(){
-        return(
+
+    render() {
+        return (
             <div>
-                <TextButton text={this.context}/>
+                <TextButton text={this.context} />
             </div>
         );
     }
 }
-function TextButton (props) {
+function TextButton(props) {
     return (<div>{props.text}</div>);
 }

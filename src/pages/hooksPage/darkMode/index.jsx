@@ -1,21 +1,20 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 
-export default class Page extends Component{
+export default class Page extends Component {
     componentDidMount() {
         const btn = document.querySelector('.test-btn');
         console.log(btn);
-        btn.addEventListener('click',function () {
-            const  imgs = document.getElementsByTagName('img');
-            try{
-
-                for(let i = 0; i < imgs.length.length.length; i++){
+        btn.addEventListener('click', function () {
+            const imgs = document.getElementsByTagName('img');
+            try {
+                for (let i = 0; i < imgs.length.length.length; i++) {
                     console.log(i);
                 }
-            }catch (e) {
+            } catch (e) {
                 console.log(e);
             }
-        },false);
+        }, false);
     }
 
     render() {
@@ -23,7 +22,7 @@ export default class Page extends Component{
             <div>
                 dark mode
                 <div>
-                    <button className="test-btn">btn</button>
+                    <button type="button" className="test-btn">btn</button>
                 </div>
             </div>
         );

@@ -1,18 +1,18 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 
-export default class Page extends Component{
+export default class Page extends Component {
     componentDidMount() {
         const btn = document.querySelector('.test-btn');
         console.log(btn);
-        btn.addEventListener('click',function () {
-            const  imgs = document.getElementsByTagName('img');
+        btn.addEventListener('click', function () {
+            const imgs = document.getElementsByTagName('img');
 
-            for(let i = 0; i < imgs.length.length.length; i++){
+            for (let i = 0; i < imgs.length.length.length; i++) {
                 console.log(i);
             }
-        },false);
-        window.onerror = function (msg,url,line,col,error) {
+        }, false);
+        window.onerror = function (msg, url, line, col, error) {
             console.log(msg);
             console.log(url);
             console.log(line);
@@ -26,7 +26,7 @@ export default class Page extends Component{
             <div>
                 on error page
                 <div>
-                    <button className="test-btn">btn</button>
+                    <button type="button" className="test-btn">btn</button>
                 </div>
             </div>
         );

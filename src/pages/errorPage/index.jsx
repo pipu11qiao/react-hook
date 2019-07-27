@@ -11,16 +11,17 @@ export default class Page extends Component {
         super(props);
         this.state = {
             navList: [{
-                path: getChildRoutePath(props,'onError'),
+                path: getChildRoutePath(props, 'onError'),
                 component: onErrorPage,
             },
             {
-                path: getChildRoutePath(props,'tryCatch'),
+                path: getChildRoutePath(props, 'tryCatch'),
                 component: tryCatchPage,
             },
             ]
         };
     }
+
     render() {
         const {
             navList
@@ -34,4 +35,4 @@ export default class Page extends Component {
 
         );
     }
-};
+}

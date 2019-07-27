@@ -1,22 +1,23 @@
 
-import React,{Component,createContext} from 'react';
+import React, { Component, createContext } from 'react';
 // import classNames from 'classnames';
 // import PropTypes from 'prop-types';
 import Button from '../components/btnWithTheme';
+
 const ThemeContext = createContext('light');
 
 class Box extends Component {
-    render (){
+    render() {
         return (
             <ThemeContext.Provider value="kkk">
                 <Toolbar />
             </ThemeContext.Provider>
         );
     }
-};
+}
 // A component in the middle doesn't have to
 // pass the theme down explicitly anymore.
-function Toolbar(props) {
+function Toolbar() {
     return (
         <div>
             <ThemedButton />
@@ -26,11 +27,11 @@ function Toolbar(props) {
 
 class ThemedButton extends Component {
     static contextType=ThemeContext;
-    render () {
+
+    render() {
         return (
             <Button theme={this.context} />
         );
-
     }
 }
 

@@ -1,4 +1,5 @@
 // 创建一个劫持的装饰器
+/*eslint-disable*/
 
 import React from 'react';
 // const Prevent= (props) => {
@@ -6,8 +7,5 @@ import React from 'react';
 // return renderComponent(other);
 // };
 
-const createPrevent = (externalProps)=>{
-    return (WrappedComponent) => (props)=> <WrappedComponent {...props} {...externalProps} />;
-};
-
+const createPrevent = (externalProps) => (WrappedComponent) => props => <WrappedComponent {...props} {...externalProps} />;
 export default createPrevent;

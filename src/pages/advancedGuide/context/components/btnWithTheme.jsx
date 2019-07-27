@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Comp =  function (props){
+const Comp = function (props) {
     return (
         <div>{props.theme}</div>
     );

@@ -1,4 +1,3 @@
-
 import React, {
     useState,
     useEffect
@@ -14,4 +13,4 @@ export default function A() {
             <p>{a}</p>
         </div>
     );
-};
+}

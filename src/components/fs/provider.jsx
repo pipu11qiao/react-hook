@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 
 const createProvider = (ContextProvider, store) => (WrappedComponent) => {
-    class ProviderState extends PureComponent {
+    class Provider extends PureComponent {
         constructor(props) {
             super(props);
             this.state = {
                 ...store,
-                setStore: this.setStore
+                setStore: this.setStore,
             };
         }
 
@@ -16,14 +16,14 @@ const createProvider = (ContextProvider, store) => (WrappedComponent) => {
 
             render() {
                 return (
-                    <ContextProvider value={this.state}>
-                        <WrappedComponent {...this.props} {...this.state} />
-                    </ContextProvider>
+                    <WrappedComponent
+                        {...this.props}
+                        {...this.state}
+                    />
                 );
             }
     }
-    ProviderState.displayName = `Provider${WrappedComponent.displayName || WrappedComponent.name || 'component'}`;
-    return ProviderState;
+    Provider.displayName = `Provider${WrappedComponent.displayName || WrappedComponent.name || 'component'}`;
 };
 
 export default createProvider;

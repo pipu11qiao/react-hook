@@ -1,27 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import createPrevent from 'components/prevent';
 
-const appleProps = createPrevent({text: 'apple'});
-const bananaProps = createPrevent({text: 'babana'});
+const appleProps = createPrevent({ text: 'apple' });
+const bananaProps = createPrevent({ text: 'babana' });
 
 const TextBox = (props) => {
-    const {text='xixi'} = props;
+    const { text = 'xixi' } = props;
     return <div>{text}</div>;
 };
 @appleProps
 class AppleBox extends Component {
-    render(){
+    render() {
         return <TextBox {...this.props} />;
     }
 }
 
 @bananaProps
 class BananaBox extends Component {
-    render(){
+    render() {
         return <TextBox {...this.props} />;
     }
 }
-
 
 
 class Page extends Component {
@@ -34,7 +33,7 @@ class Page extends Component {
             </div>
         );
     }
-};
+}
 
 
 export default Page;
