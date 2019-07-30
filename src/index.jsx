@@ -7,7 +7,7 @@ import hooksPage from './pages/hooksPage/index';
 import errorPage from './pages/errorPage/index';
 import advancePage from './pages/advancedGuide/index';
 
-const redirectPath = 'advance'; // error hooks advance
+const redirectPath = 'hooks'; // error hooks advance
 ReactDOM.render(
     <Router>
         <Redirect from="/" to={`/${redirectPath}`} />
