@@ -1,41 +1,47 @@
-
-import React, { useState, createContext, useContext } from 'react';
+import React, { useReducer, useContext } from 'react';
 // import classNames from 'classnames';
 // import PropTypes from 'prop-types';
+//
+import { Context, reducer, BaseProvider } from './store';
 
-const BaseContext = createContext(0);
 
 const C1 = () => {
-    const num = useContext(BaseContext);
+    const { state, dispatch } = useContext(Context);
+    const { num } = state;
     return (
         <div>
-            <p>C1</p>
+            <p>C2 -5</p>
+            <button type="button" onClick={() => { dispatch({ type: 'minusSome', num: 5 }) }}>-5</button>
             <p>{num}</p>
         </div>
     );
 };
 const C2 = () => {
-    const num = useContext(BaseContext);
+    const { state, dispatch } = useContext(Context);
+    const { num } = state;
     return (
         <div>
-            <p>C2</p>
+            <p>C2 +5</p>
+            <button type="button" onClick={() => { dispatch({ type: 'addSome', num: 5 }) }}>+5</button>
             <p>{num}</p>
         </div>
     );
 };
 
 const Page = function () {
-    const [num, setNum] = useState(0);
-    console.log(setNum);
+    const [state, dispatch] = useReducer(reducer, { num: 0 });
+    const { num } = state;
+    const value = { state, dispatch };
+    console.log(state);
     return (
         <div style={{ fontSize: '20px' }}>
-            <BaseContext.Provider value={num}>
-                <button type="button" onClick={() => { setNum(num + 1) }}>+</button>
-                <button type="button" onClick={() => { setNum(num - 1) }}>-</button>
+            <BaseProvider value={value}>
+                <button type="button" onClick={() => { dispatch({ type: 'add' }) }}>+</button>
+                <button type="button" onClick={() => { dispatch({ type: 'minus' }) }}>-</button>
                 {num}
                 <C1 />
                 <C2 />
-            </BaseContext.Provider>
+            </BaseProvider>
         </div>
     );
 };

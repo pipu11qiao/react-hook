@@ -1,14 +1,33 @@
 import React, { createContext } from 'react';
 
-const BaseContext = createContext();
+export const Context = createContext({});
 
-const BaseProvider = function (props) {
+export const BaseProvider = function (props) {
     return (
-        <BaseContext.Provider value="data">
+        <Context.Provider value={props.value}>
             {props.children}
-        </BaseContext.Provider>
+        </Context.Provider>
     );
 };
 
+export const reducer = function (state, action) {
+    switch (action.type) {
+    case 'add':
+        return { num: state.num + 1 };
+    case 'minus':
+        return { num: state.num - 1 };
+    case 'addSome':
+        return { num: state.num + (action.num || 1) };
+    case 'minusSome':
+        return { num: state.num - (action.num || 1) };
+    default:
+        throw new Error();
+    }
+};
 
-export default BaseProvider;
+
+export default {
+    Context,
+    BaseProvider,
+    reducer
+};
