@@ -1,6 +1,6 @@
-import createStore from 'components/fs';
+import createStore from './cStore';
 
 export const { Provider, Connect, Cosumer } = createStore({
-    text: 'okk',
-    num: 20,
+    text: 'test context',
+    num: 3,
 });
