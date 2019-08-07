@@ -7,6 +7,7 @@ import { Provider } from 'store';
 import CodeSplitPage from './codeSplit';
 import ContextPage from './context';
 import OrderComponentPage from './orderComponent';
+import fxDemoPage from './fxDemo';
 
 @Provider
 class Page extends Component {
@@ -25,6 +26,10 @@ class Page extends Component {
                 {
                     path: getChildRoutePath(props, 'orderComponent'),
                     component: OrderComponentPage,
+                },
+                {
+                    path: getChildRoutePath(props, 'fxDemo'),
+                    component: fxDemoPage,
                 },
             ]
         };
