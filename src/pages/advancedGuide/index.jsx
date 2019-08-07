@@ -8,6 +8,7 @@ import CodeSplitPage from './codeSplit';
 import ContextPage from './context';
 import OrderComponentPage from './orderComponent';
 import fxDemoPage from './fxDemo';
+import forwardRefPage from './forwardRef';
 
 @Provider
 class Page extends Component {
@@ -31,12 +32,16 @@ class Page extends Component {
                     path: getChildRoutePath(props, 'fxDemo'),
                     component: fxDemoPage,
                 },
+                {
+                    path: getChildRoutePath(props, 'forwardRef'),
+                    component: forwardRefPage,
+                },
             ]
         };
     }
 
     render() {
-        console.log('provider1', this.props);
+        // console.log('provider1', this.props);
         const {
             navList
         } = this.state;
