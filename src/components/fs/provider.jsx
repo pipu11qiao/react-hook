@@ -16,14 +16,14 @@ const createProvider = (ContextProvider, store) => (WrappedComponent) => {
 
             render() {
                 return (
-                    <WrappedComponent
-                        {...this.props}
-                        {...this.state}
-                    />
+                    <ContextProvider value={this.state}>
+                        <WrappedComponent {...this.props} {...this.state} />
+                    </ContextProvider>
                 );
             }
     }
     Provider.displayName = `Provider${WrappedComponent.displayName || WrappedComponent.name || 'component'}`;
+    return Provider;
 };
 
 export default createProvider;
