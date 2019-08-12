@@ -9,6 +9,7 @@ import ContextPage from './context';
 import OrderComponentPage from './orderComponent';
 import fxDemoPage from './fxDemo';
 import forwardRefPage from './forwardRef';
+import portalPage from './portal';
 
 @Provider
 class Page extends Component {
@@ -35,6 +36,10 @@ class Page extends Component {
                 {
                     path: getChildRoutePath(props, 'forwardRef'),
                     component: forwardRefPage,
+                },
+                {
+                    path: getChildRoutePath(props, 'portal'),
+                    component: portalPage,
                 },
             ]
         };
