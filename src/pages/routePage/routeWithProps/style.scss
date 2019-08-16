@@ -1,0 +1,11 @@
+#route_with_prps_page{
+    display: flex;
+    .left{
+        width: 200px;
+        flex-shrink: 0;
+    }
+    button{
+        display:inline-block;
+        padding: 10px
+    }
+}

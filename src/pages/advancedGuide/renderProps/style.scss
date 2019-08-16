@@ -1,0 +1,12 @@
+.mouse-tip{
+    display:block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    &.gray{
+        background-color:#ddd;
+    }
+    &.red{
+        background-color:red;
+    }
+}

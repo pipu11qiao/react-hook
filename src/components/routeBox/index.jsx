@@ -13,7 +13,7 @@ export default function NavBox(props) {
                 {
                     props.routeList.map((route, index) => (
                         <Route
-                            exact
+                            exact={route.exact}
                             key={`route-${index}`}
                             path={route.path}
                             component={route.component}
