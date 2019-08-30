@@ -8,8 +8,9 @@ import errorPage from './pages/errorPage/index';
 import advancePage from './pages/advancedGuide/index';
 import routePage from './pages/routePage/index';
 import apiPage from './pages/reactApi/index';
+import sourcePage from './pages/reactSource/index';
 
-const redirectPath = 'api'; // error hooks advance route api
+const redirectPath = 'source'; // error hooks advance route api source
 ReactDOM.render(
     <Router>
         <Redirect from="/" to={`/${redirectPath}`} />
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route path="/advance" component={advancePage} />
         <Route path="/route" component={routePage} />
         <Route path="/api" component={apiPage} />
+        <Route path="/source" component={sourcePage} />
     </Router>,
     document.getElementById('root')
 );

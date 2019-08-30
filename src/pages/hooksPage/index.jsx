@@ -7,6 +7,7 @@ import { getChildRoutePath } from 'components/util';
 import eventListenerPage from './eventListener';
 import darkModePage from './darkMode';
 import contextPage from './context';
+import refPage from './ref';
 
 export default class Page extends Component {
     constructor(props) {
@@ -24,6 +25,10 @@ export default class Page extends Component {
                 {
                     path: getChildRoutePath(props, 'context'),
                     component: contextPage,
+                },
+                {
+                    path: getChildRoutePath(props, 'ref'),
+                    component: refPage,
                 },
             ]
         };
