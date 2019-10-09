@@ -3,9 +3,11 @@ import React,{useState,useEffect} from 'react';
 // import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import './style.scss';
+// import './style.scss';
 
-export default function CarButton(props){
+/** This is an awesome looking button for React.  */
+
+const CarButton = function (props){
     let isControl = false; // 是否受控
     if(typeof props.num !== 'undefined'){
         isControl = true;
@@ -44,5 +46,14 @@ CarButton.defauttProps = {
     onChange(){}
 };
 CarButton.propTypes = {
+    /** sizeadfdfasf */
+    size: PropTypes.string,
+    /** sizeadfdfasf */
+    index: PropTypes.number,
+    buttons: PropTypes.array,
+    onBtnClick: PropTypes.func,
+
+    /** a func */
     onChange:PropTypes.func
-};
+}
+export default CarButton;
