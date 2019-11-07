@@ -5,6 +5,7 @@ import { getChildRoutePath } from 'components/util';
 
 import tryCatchPage from './tryCatch/index';
 import onErrorPage from './onError/index';
+import markdownPage from './markdown/index';
 
 export default class Page extends Component {
     constructor(props) {
@@ -17,6 +18,10 @@ export default class Page extends Component {
             {
                 path: getChildRoutePath(props, 'tryCatch'),
                 component: tryCatchPage,
+            },
+            {
+                path: getChildRoutePath(props, 'markdown'),
+                component: markdownPage,
             },
             ]
         };

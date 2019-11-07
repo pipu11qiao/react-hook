@@ -10,7 +10,7 @@ import routePage from './pages/routePage/index';
 import apiPage from './pages/reactApi/index';
 import sourcePage from './pages/reactSource/index';
 
-const redirectPath = 'source'; // error hooks advance route api source
+const redirectPath = 'error'; // error hooks advance route api source
 ReactDOM.render(
     <Router>
         <Redirect from="/" to={`/${redirectPath}`} />
